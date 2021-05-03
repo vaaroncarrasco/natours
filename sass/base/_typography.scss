@@ -1,0 +1,68 @@
+// typography -> related to text and fonts/typography -> but i would (personally) make this a component
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.7; /* 1.7 times bigger than predefined line-height */
+    color: $color-grey-dark;
+    padding: 3rem; /* White padding on entire page */
+}
+
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+    backface-visibility: hidden; /* hack: hide back element container from moving in animations*/
+    margin-bottom: 6rem;
+
+    &--main {
+      display: block; /* spans are inline by default */
+      font-size: 6rem;
+      font-weight: 400;
+      letter-spacing: 3.5rem;
+      animation-name: moveInLeft;
+      animation-duration: 1s;
+      animation-timing-function: ease-out; /* how fast/slow animations params run */
+    }
+
+    &--sub {
+      display: block;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 1.75rem;
+      animation: moveInRight 1s ease-out;
+    }
+}
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  display: inline-block; // making h2 inline-block to just have background where text is
+  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark); // setting a linear gradient from left to right
+  -webkit-background-clip: text; // to clip background to only fit text
+  color: transparent; // make text transparent so the background is only visible
+
+  letter-spacing: .2rem;
+  transition: all .2s;
+
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1); // twist text and make bigger on hover
+    text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+  }
+}
+
+.heading-tertiary {
+  font-size: $default-font-size;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: $default-font-size;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+}

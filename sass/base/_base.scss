@@ -1,0 +1,18 @@
+// _partial.scss -> @import 'base/partial'; with _ in the fileName | without _ in the import // IMPORT IN MAIN.SCSS
+
+// base -> basic definitions of entire project
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; // REM root / global definition
+}
+
+body { // keep inheriting box-sizing: border-box; in _base / but body{typo styles} typography declarations in _typography
+  box-sizing: border-box; /* set inheritable box-sizing in body{} selector */
+}

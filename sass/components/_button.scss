@@ -1,6 +1,7 @@
 // components -> reusable piece of code that comprends a part of a layout
 
 .btn {
+    &,
     &:link, /* class:pseudoclass */
     &:visited {
         text-transform: uppercase;
@@ -11,6 +12,10 @@
         transition: all 0.2s; /* all -> specifies which props we want to animate */
         position: relative; /* to be reference on sizing child elements */
         font-size: $default-font-size;
+
+        // Change for the <button> element
+        border: none;
+        cursor: pointer;
     }
 
     &:hover {
@@ -22,7 +27,9 @@
         }
     }
 
-    &:active {
+    &:active,
+    &:focus {
+        outline: none;
         transform: translateY(-0.1rem);
         box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
     }

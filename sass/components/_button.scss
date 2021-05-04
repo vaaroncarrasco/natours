@@ -35,6 +35,14 @@
         }
     }
 
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
+        &::after {
+            background-color: $color-primary;
+        }
+    }
+
     &::after {
         content: ""; /* ALWAYS SPECIFY PSEUDE ELEMENT CONTENT - most cases ""*/
         display: inline-block; /* ALWAYS SPECIFY PSEUDE ELEMENT DISPLAY */

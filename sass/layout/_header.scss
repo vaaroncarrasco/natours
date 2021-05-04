@@ -10,6 +10,7 @@
       url(../img/hero.jpg);
     background-size: cover;
     background-position: top; /* Top of image stays on top/bottom/center of container on resizing */
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     position: relative; // parent element position:relative is set to let child be position absolute -> .header__logo-box
 
@@ -31,3 +32,4 @@
       text-align: center;
     }
 }
+

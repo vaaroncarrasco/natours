@@ -10,9 +10,35 @@
 }
 
 html {
-  font-size: 62.5%; // REM root / global definition
+  font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%
+
+  // we dont include (phone) cause it would the same font-size as (tab-port)
+
+  // to avoid conflicting media queries and using the last media query approved
+  // set media queries -> always  LARGER before SMALLER ones
+
+  @include respond(tab-land) { // width < 1200 ?
+    font-size: 56.25%; // 1rem = 9px, 9/16 = .5625 -> 56.25%
+  }
+
+  @include respond(tab-port) { // width < 900 ?
+    font-size: 50%; // 1rem = 8px, 8/16 = .5 -> 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; // 1rem = 12, 12/6 = .75 -> 75%
+  }
+
 }
 
 body { // keep inheriting box-sizing: border-box; in _base / but body{typo styles} typography declarations in _typography
   box-sizing: border-box; /* set inheritable box-sizing in body{} selector */
+  padding: 3rem; /* White padding on entire page */
+
+  @include respond(tab-port) { // width < 900 ?
+
+    padding: 0;
+
+  }
+
 }

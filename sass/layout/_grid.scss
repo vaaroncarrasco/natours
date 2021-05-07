@@ -5,6 +5,15 @@
     // .row:last-child() -> selects the last child
     &:not(:last-child) { // &:not(:last-child) -> selects everything but not the last-child
         margin-bottom: $gutter-vertical; // set margin bottom in all except last child
+
+        @include respond(tab-port) {
+            margin-bottom: $gutter-vertical-small;
+        }
+    }
+
+    @include respond(tab-port) {
+        max-width: 50rem;
+        padding: 0 3rem;
     }
 
     // .row::after {}
@@ -15,11 +24,19 @@
 
         &:not(:last-child) {
             margin-right: $gutter-horizontal; // all margins only on the right but not the last child -> keeping spaces in between
+
+            @include respond(tab-port) {
+                margin-right: 0;
+                margin-bottom: $gutter-vertical-small;
+            }
+        }
+
+        @include respond(tab-port) {
+            width: 100% !important;
         }
     }
 
     // calc with native function cause it works with the rendered layout values
-
 
     .col-1-of-2 { width: calc((100% - #{$gutter-horizontal}) / 2); }
 
